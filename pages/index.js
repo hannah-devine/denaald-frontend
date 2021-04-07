@@ -6,11 +6,11 @@ export default function Home({ data }) {
   return (
     <Layout>
       <div className={styles.grid}>
-        {data.map((articles) => (
-          <Link href="https://nextjs.org/docs">
+        {data.map((article) => (
+          <Link key={article.id} href={`/articles/${article.slug}`}>
             <a className={styles.card}>
-              <h3>{articles.title} &rarr;</h3>
-              <p>{articles.description}</p>
+              <h3>{article.title} &rarr;</h3>
+              <p>{article.description}</p>
             </a>
           </Link>
         ))}
